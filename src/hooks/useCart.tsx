@@ -34,15 +34,17 @@ export function CartProvider({ children }: CartProviderProps): JSX.Element {
 
   const addProduct = async (productId: number) => {
     try {
-      // TODO
+      localStorage.setItem('cartProductById',JSON.stringify(productId))
+
+      toast.success('O produto foi adicionado com sucesso')
     } catch {
-      // TODO
+      toast.error('O produto não foi adicionado no carrinho')
     }
   };
 
   const removeProduct = (productId: number) => {
     try {
-      // TODO
+      localStorage.remove('cartProductById')
     } catch {
       // TODO
     }
